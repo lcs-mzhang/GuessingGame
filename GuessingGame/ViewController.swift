@@ -14,7 +14,10 @@ class ViewController: UIViewController
     //MARK: Outlets
     
     @IBOutlet weak var numberGuessed: UITextField!
+    @IBOutlet weak var toUser: UILabel!
     //MARK: Properties(variables)
+    
+    var game = GuessingGame()
     
     //MARK: Overridden functions(overrides)
     
@@ -22,6 +25,8 @@ class ViewController: UIViewController
     {
         super.viewDidLoad()
         // Do any additional setup after loading the view, typically from a nib.
+        print("the nuber to gess is")
+        print(game.numberToGuess)
     }
     
     override func didReceiveMemoryWarning()
@@ -53,10 +58,9 @@ class ViewController: UIViewController
         
         //Print guessed number again
         print(integerGiven)
+        toUser.text = game.checkGuess(guess: integerGiven)
     }
-    
     //Custom functions
-    
-    
+
 }
 
